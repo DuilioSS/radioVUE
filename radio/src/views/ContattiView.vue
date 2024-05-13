@@ -132,11 +132,12 @@
   
   <style scoped>
   .v-container {
-  background-color: #0a0a34;
-  max-width: 12000px;
-  border-radius: 15px;
-  padding: 20px;
-}
+    background-color: #0a0a34;
+    max-width: 1200px;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 0 auto;
+  }
   
   .image {
     width: 50px;
@@ -151,7 +152,7 @@
   .heart-container {
     display: inline-block;
     cursor: pointer;
-    margin-left: 5px;
+    margin-left: 15px; /* Aumentado el margen izquierdo */
     margin-top: 100px;
   }
   
@@ -163,11 +164,15 @@
   .titleText {
     color: aliceblue;
   }
-  .v-card{
-  background-color: #c8c8cd;
-  color: rgb(176, 179, 181);
-
-}
+  
+  .v-card {
+    background-color: #c8c8cd;
+    color: rgb(176, 179, 181);
+    padding: 20px;
+    border-radius: 15px; /* Añadido borde redondeado */
+    margin-bottom: 20px;
+  }
+  
   .heart {
     width: 40px;
     height: 40px;
@@ -180,12 +185,21 @@
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3z" fill="%23FF0000"/></svg>');
   }
   
-  .bnt-play {
+  .btn-play {
     background-color: Green;
     font-size: 40px;
-    padding-bottom: 40px;
-    margin-left: -40px;
+    padding: 20px;
     width: 100px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 20px; /* Aumentada la distancia entre botones */
+  }
+  
+  .btn-play:hover {
+    background-color: DarkGreen;
   }
   
   h1 {
@@ -196,65 +210,61 @@
   }
   
   .v-row {
+    display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
   }
   
   .card {
-    max-width: 400px;
+    flex: 0 1 300px;
+    margin: 0 10px 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
-    border-radius: 10px !important;
-    position: relative;
+    border-radius: 15px; /* Añadido borde redondeado */
+    overflow: hidden;
+    
   }
   
   .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
   }
   
   .card-image {
-    width: 100px;
+    width: 80%;
     height: 100px;
-    margin-left: 10px;
     object-fit: cover;
-    border-radius: 5px;
-    margin-right: 0px;
+    border-radius: 15px 15px 0 0; /* Redondeo en la parte superior */
   }
-  
   
   .v-card-title {
     color: #333;
     font-size: 1.2em;
     font-weight: bold;
+    margin: 10px 0;
   }
   
   .controls {
     position: absolute;
     bottom: 10px;
-    left: 160px;
-    /* Changed from 'right' to 'left' */
+    right: 20px;
     display: flex;
     align-items: center;
   }
   
-  .controls .v-btn {
-    margin-right: 50px;
-    /* Changed from 'margin-left' to 'margin-right' */
-    margin-top: 100px;
+  .controls .btn {
+    margin-right: 10px;
   }
   
   .sound-wave {
     display: flex;
     align-items: center;
-    height: 20px;
-    margin-left: 10px;
-    /* Adjust this if necessary */
-    margin-top: 100px;
-    /* Added to push the sound wave down */
+    margin-top: 10px;
   }
   
   .bar {
     width: 4px;
-    height: 100%;
+    height: 20px;
     margin: 0 2px;
     background-color: #333;
     animation: pulse 0.8s infinite ease-in-out alternate;
@@ -285,4 +295,4 @@
       transform: scaleY(1);
     }
   }
-  </style>
+</style>
